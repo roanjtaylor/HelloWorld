@@ -24,4 +24,8 @@ public class HelloWorld {
         clickMe.setBounds(100, 150, 300, 150);                       // (x, y, width, height)
         frame.add(clickMe);
     }
+
+    public static void buttonClicked(){
+        JOptionPane.showMessageDialog(null, "HELLO WORLD!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+    }
 }
