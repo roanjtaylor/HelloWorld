@@ -1,8 +1,8 @@
 import javax.swing.*;
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
+import java.awt.event.*;
 
-public class HelloWorld {
+public class HelloWorld implements ActionListener {
     public static void main(String[] args) {
         // System.out.println("Hello world!");
 
@@ -21,11 +21,15 @@ public class HelloWorld {
         clickMe.setFont(new Font("Arial", Font.ITALIC, 36));
         clickMe.setForeground(new Color(255, 0, 0));                // text colour
         clickMe.setBackground(new Color(255, 255, 153));
-        clickMe.setBounds(100, 150, 300, 150);                       // (x, y, width, height)
+        clickMe.setBounds(100, 150, 300, 150);                      // (x, y, width, height)
+        HelloWorld object = new HelloWorld();                       // Needs done as addActionListener needs non-static object
+        clickMe.addActionListener(object);
         frame.add(clickMe);
     }
 
-    public static void buttonClicked(){
+    @Override
+    public void actionPerformed(ActionEvent e) {
         JOptionPane.showMessageDialog(null, "HELLO WORLD!", "Notification", JOptionPane.INFORMATION_MESSAGE);
+        
     }
 }
